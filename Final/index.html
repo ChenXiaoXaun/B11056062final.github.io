@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自我介紹</title>
+    <style>
+        .table-wrapper {
+            margin: 50px;
+            box-shadow: 0px 35px 50px rgba(27, 31, 49, 0.1);
+            display: block;
+            overflow: auto;
+        }
+        
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: white;
+        }
+        
+        .table td,
+        .table th {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .table td {
+            border-right: 2px dashed black;
+        }
+        
+        .table thead th {
+            color: brown;
+            background: lightpink;
+        }
+        
+        .table thead th:nth-child(2) {
+            background-color: lightgoldenrodyellow;
+        }
+        
+        .table thead th:nth-child(3) {
+            background-color: lightblue;
+        }
+        
+        .table thead th:nth-child(4) {
+            background-color: lightgray;
+        }
+        
+        .table thead th:nth-child(5) {
+            background-color: lightgoldenrodyellow;
+        }
+        
+        .table ul {
+            padding: 20px;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .table ul li {
+            border-bottom: 1px solid red;
+            padding: 5px;
+            position: relative;
+            list-style-type: circle;
+        }
+        
+        @media (max-width:600px) {
+            .table-wrapper {
+                margin: 30px 15px;
+            }
+            .table thead {
+                display: none;
+            }
+            .table td {
+                display: block;
+                padding: 0;
+            }
+            .table td:before {
+                content: attr(data-title);
+                display: inline-block;
+                width: 100%;
+                font-weight: 500;
+                padding: 6px 0;
+                color: white;
+                background: pink;
+            }
+            .table td:nth-child(2):before {
+                background-color: yellow;
+            }
+            .table td:nth-child(3):before {
+                background-color: blue;
+            }
+            .table td:nth-child(4):before {
+                background-color: gray;
+            }
+            .table td:nth-child(5):before {
+                background-color: yellow;
+            }
+            .table ul li {
+                border-bottom: 1px solid green;
+                padding: 5px;
+                position: relative;
+                list-style-type: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    目前畫面寬度：<span id="res"></span>
+    <script laguage="JavaScript">
+        document.getElementById('res').textContent = window.innerWidth;
+
+        window.onresize = function() {
+            document.getElementById('res').textContent = window.innerWidth;
+        }
+    </script>
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>照片</th>
+                    <th>電話</th>
+                    <th>年級</th>
+                    <th>自我介紹</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-title="姓名">
+                        <ul>
+                            <li>陳曉暄</li>
+                        </ul>
+                    </td>
+                    <td data-title="照片">
+                        <ul>
+                            <li><img src="myphoto.jpg" alt="myphoto" width="75px" height="110px"></li>
+                        </ul>
+                    </td>
+                    <td data-title="電話">
+                        <ul>
+                            <li>0988191663</li>
+                        </ul>
+                    </td>
+                    <td data-title="年級">
+                        <ul>
+                            <li>資管1A</li>
+                        </ul>
+                    </td>
+                    <td data-title="自我介紹">
+                        <ul>
+                            <li>我來自台南，畢業於國立北門高級農工職業學校的電子商務科，<br>平常興趣是閱讀書籍、唱歌，偶爾會看看感興趣的動漫、漫畫、戲劇等。</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+    <a href="index2.html" target="_blank" style="display: block;text-align: left;">點我到蕭壠文化園區簡介</a>
+    <a href="https://sites.google.com/d/1DjMNie792hFL5fH4higi559MGp2Clatl/p/110BL67V2b6xpLHXbF3J6h2cght2-M5FP/edit" target="_blank" style="display: block;text-align: right;">點我看排球少年簡介</a>
+</body>
+
+</html>
